@@ -30,7 +30,7 @@ $H_A$: There is a difference in the vaccine and it being effective in some or mo
 
 ## Males
 
-## Graphical Descriptive
+### Graphical Descriptive
 
 ```{r}
 barchartGC(~infected + treatment,data=FinalData)
@@ -38,7 +38,7 @@ barchartGC(~infected + treatment,data=FinalData, type="percent")
 ```
 
 
-# Numberical Descriptive
+### Numberical Descriptive
 
 ```{r}
 table1 <- xtabs(~infected + treatment, data=FinalData)
@@ -46,7 +46,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-# Inferential Results
+## Inferential Results
 
 ```{r}
 chisq.test(table1)
@@ -57,34 +57,78 @@ ftest=fisher.test(table1)
 
 ## Females
 
-# Graphical Descriptive
-# Numberical Descriptive
-# Inferential Results
+### Graphical Descriptive
+
+```{r}
+barchartGC(~infected + sex,data=FinalData)
+barchartGC(~infected + sex,data=FinalData, type="percent")
+```
+
+### Numberical Descriptive
+
+```{r}
+table1 <- xtabs(~treatment + sex, data=FinalData)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+ftest=fisher.test(table1)
+```
 
 ## LGBTQ
 
-# Graphical Descriptive
+### Graphical Descriptive
 
 ```{r}
 barchartGC(~infected + LGBTQ,data=FinalData)
 barchartGC(~infected + LGBTQ,data=FinalData, type="percent")
 ```
 
-# Numberical Descriptive
+### Numberical Descriptive
 
+```{r}
+table1 <- xtabs(~treatment + LGBTQ, data=FinalData)
+rowPerc(table1)
+colPerc(table1)
+```
 
-# Inferential Results
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+ftest=fisher.test(table1)
+```
 
 ## Druggies
+
+### Graphical Descriptive
 
 ```{r}
 barchartGC(~infected + DrugUser,data=FinalData)
 barchartGC(~infected + DrugUser,data=FinalData, type="percent")
 ```
 
-# Graphical Descriptive
+### Numberical Descriptive
 
-# Numberical Descriptive
+```{r}
+table1 <- xtabs(~treatment + DrugUser, data=FinalData)
+rowPerc(table1)
+colPerc(table1)
+```
 
-# Inferential Results
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+ftest=fisher.test(table1)
+```
+
+# Conclusion 
 
