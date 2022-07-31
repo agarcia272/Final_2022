@@ -56,9 +56,12 @@ chisq.test(table1)
 chisqtestGC(table1)
 ftestM=fisher.test(table1)
 ftestM
+effecM=ftestM$estimate/(ftestM$estimate+1)*100
 ```
 
-
+The Chi-square test shows that Male have a p-vaule of 0.00000000000026 which is less than 0.05, therefore we reject the null hypothesis 
+For the fisher's exact test tells us that our p-vaule is 0.00000000000019.
+the odds ratio is about 1.720532 and the efficacy is `r effecM`
 
 
 ## Females
@@ -69,6 +72,8 @@ ftestM
 barchartGC(~infected + sex,data=FinalData)
 barchartGC(~infected + sex,data=FinalData, type="percent")
 ```
+
+According to the graph there is no difference, both subgroups have about the same outcome.
 
 ### Numberical Descriptive
 
@@ -85,6 +90,7 @@ chisq.test(table1)
 chisqtestGC(table1)
 ftestsex=fisher.test(table1)
 ftestsex
+effecsex=ftestsex$estimate/(ftestsex$estimate+1)*100
 ```
 
 ## LGBTQ
@@ -111,6 +117,7 @@ chisq.test(table1)
 chisqtestGC(table1)
 ftestLGBTQ=fisher.test(table1)
 ftestLGBTQ
+effecLGBTQ=ftestLGBTQ$estimate/(ftestLGBTQ$estimate+1)*100
 ```
 
 ## Druggies
@@ -137,6 +144,7 @@ chisq.test(table1)
 chisqtestGC(table1)
 ftestDrugUser=fisher.test(table1)
 ftestDrugUser
+effecDrugUser=ftestDrugUser$estimate/(ftestDrugUser$estimate+1)*100
 ```
 
 # Conclusion
