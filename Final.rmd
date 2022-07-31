@@ -59,8 +59,8 @@ ftestM
 effecM=ftestM$estimate/(ftestM$estimate+1)*100
 ```
 
-The Chi-square test shows that Male have a p-vaule of 0.00000000000026 which is less than 0.05, therefore we reject the null hypothesis 
-For the fisher's exact test tells us that our p-vaule is 0.00000000000019.
+The Chi-square test shows that Male have a p-value of 0.00000000000026 which is less than 0.05, therefore we reject the null hypothesis 
+For the fisher's exact test tells us that our p-value is 0.00000000000019.
 the odds ratio is about 1.720532 and the efficacy is `r effecM`
 
 
@@ -92,6 +92,8 @@ ftestsex=fisher.test(table1)
 ftestsex
 effecsex=ftestsex$estimate/(ftestsex$estimate+1)*100
 ```
+According to the chi-square test the Female p-value is about 0.6455 which is greater than 0.05, therefore we fail to reject the null hypothesis. 
+For the fisher's exact test the p-value is 0.6386. The odds ratio is 0.9902268 and the efficacy is `r effecsex`
 
 ## LGBTQ
 
@@ -119,6 +121,8 @@ ftestLGBTQ=fisher.test(table1)
 ftestLGBTQ
 effecLGBTQ=ftestLGBTQ$estimate/(ftestLGBTQ$estimate+1)*100
 ```
+
+the efficacy is `r effecLGBTQ`
 
 ## Druggies
 
