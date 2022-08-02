@@ -82,6 +82,7 @@ table1 <- xtabs(~treatment + sex, data=FinalData)
 rowPerc(table1)
 colPerc(table1)
 ```
+In the first treatment the female has more subjects who have taken the vaccine than the placebo. In the second treatment we can see that there is more female subjects that have taken the placebo than the vaccine.
 
 ## Inferential Results
 
@@ -111,6 +112,7 @@ table1 <- xtabs(~treatment + LGBTQ, data=FinalData)
 rowPerc(table1)
 colPerc(table1)
 ```
+According to the chart we can see that the first treatment was a lot more subject on the straight category they took more treatment than the gay category. As there is a significant difference as the straight category is around 91% while the gay category, only 8% took the treatment. On the second treatment both subgroups took about the same, they have both around 50%. 
 
 ## Inferential Results
 
@@ -140,6 +142,8 @@ table1 <- xtabs(~treatment + DrugUser, data=FinalData)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+
 
 ## Inferential Results
 
