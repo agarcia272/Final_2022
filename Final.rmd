@@ -105,6 +105,8 @@ barchartGC(~infected + LGBTQ,data=FinalData)
 barchartGC(~infected + LGBTQ,data=FinalData, type="percent")
 ```
 
+According to the graph the straight category had a higher percentage than the gay category. The straight category had a high 80% while the gay category had less than a 20%.
+
 ### Numberical Descriptive
 
 ```{r}
@@ -112,7 +114,7 @@ table1 <- xtabs(~treatment + LGBTQ, data=FinalData)
 rowPerc(table1)
 colPerc(table1)
 ```
-According to the chart we can see that the first treatment was a lot more subject on the straight category they took more treatment than the gay category. As there is a significant difference as the straight category is around 91% while the gay category, only 8% took the treatment. On the second treatment both subgroups took about the same, they have both around 50%. 
+According to the chart we can see that the first treatment had a lot more subjects, the straight category took more treatment than the gay category. As there is a significant difference in the straight category with around a 91%, while in the gay category only 8% took the treatment. On the second treatment both subgroups took about the same, they have both around 50%. 
 
 ## Inferential Results
 
@@ -123,8 +125,7 @@ ftestLGBTQ=fisher.test(table1)
 ftestLGBTQ
 effecLGBTQ=ftestLGBTQ$estimate/(ftestLGBTQ$estimate+1)*100
 ```
-
-the efficacy is `r effecLGBTQ`
+The chi-square test shows that the p-value for this subgroup is 0.8924 which is greater than a 0.05 value, therefore we fail to reject the null hypothesis. For the fisher exact test it tells us that our p-value is 0.88, the odds ratio is 1.00584 and the efficacy is `r effecLGBTQ`
 
 ## Druggies
 
@@ -135,6 +136,8 @@ barchartGC(~infected + DrugUser,data=FinalData)
 barchartGC(~infected + DrugUser,data=FinalData, type="percent")
 ```
 
+According to the graph majority of the Drug users chose not to take the treatment. About a high 90% of them said no. While the rest of the subgroup said yes.
+
 ### Numberical Descriptive
 
 ```{r}
@@ -143,7 +146,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-
+According to the chart people who take drugs are far less likely to take the treatment on both vaccine or placebo. As you can see the percentage rate is very low, it's around 9% however people who don't take drugs are likely to accept treatment on both vaccine and placebo.
 
 ## Inferential Results
 
@@ -154,7 +157,8 @@ ftestDrugUser=fisher.test(table1)
 ftestDrugUser
 effecDrugUser=ftestDrugUser$estimate/(ftestDrugUser$estimate+1)*100
 ```
+According to the chi-square test it shows that the p-value is 0.1811 which is higher than 0.05, therefore we fail to reject the null hypothesis. As for the fisher's exact test we have a p-value of 0.18, with a odds ratio of 1.052577 and with the efficacy of `r effecDrugUser`.
 
 # Conclusion
 
-In conclusion we reject the null hypothesis because according to most of the subgroup graphs there is a difference in the vaccine and it being effective in some or most subgroups.
+In conclusion we reject the null hypothesis because according to most of the subgroup graphs there is a difference in the vaccine and it being effective in some or most subgroups. 
